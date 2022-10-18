@@ -47,3 +47,27 @@ function findNeedle(haystack) {
   //Then it adds those values to a new array called answer and returns it. 
 
 
+  //problem 3
+
+// Implement a function which convert the given boolean value into its string representation.
+
+// Note: Only valid inputs will be given.
+
+function booleanToString(b){
+  if (b === true) {
+  return "true"
+  } else if (b === false) {
+    return "false"
+  }
+}
+
+// console.log(booleanToString(true))
+
+
+
+// problem 4
+
+// take the length of a string and divide it in half to get the middle of the string.
+// return the 2 middle letters if it is even 
+//or return the 1 middle letter if it is odd
+
