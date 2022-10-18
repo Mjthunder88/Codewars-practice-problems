@@ -71,3 +71,22 @@ function booleanToString(b){
 // return the 2 middle letters if it is even 
 //or return the 1 middle letter if it is odd
 
+function getMiddle(s){
+  let middle = ''
+  let middle2 = ''
+  let index = 0
+  let result = ''
+  if (s.length % 2 === 0) {
+    middle = (s.length / 2) - 1 
+    middle2 = s.length / 2
+    result = s[middle] + s[middle2]
+//     console.log(result)
+    return result
+  } else {
+     middle = (s.length -1) / 2
+    return s[middle]
+  }
+}
+
+// console.log(getMiddle('testing'))
+// console.log(getMiddle('test'))
