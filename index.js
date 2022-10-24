@@ -139,3 +139,41 @@ console.log(outlier(arr1))
 console.log('--------------------------------')
 console.log(outlier(arr2))
 // Should return: 160 
+
+// problem 7
+// Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+
+var min = function(list){
+  let minNum = Math.min(...list)
+//     console.log(minNum)
+  return minNum;
+}
+
+var max = function(list){
+   let maxNum = Math.max(...list)
+  return maxNum;
+}
+
+
+//problem 8 
+
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+
+function check(a, x) {
+  
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === x) {
+      return true 
+    } else {
+      continue
+    }
+  }
+  return false
+}
+
+// console.log(check([66, 101], 66))
+// console.log(check([101, 45, 75, 105, 99, 107], 107))
+// console.log(check(['t', 'e', 's', 't'], 'e'))
+// console.log(check(['what', 'a', 'great', 'kata'], 'kat'))
