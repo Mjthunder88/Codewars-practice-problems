@@ -110,3 +110,32 @@ function greet (name, owner) {
 // console.log(greet('Marcus', 'Dave'))
 
 //Problem 6
+
+// Take an array and loop through the array to check if the numbers are even. If one number is not return that number
+// by pushing it into a seperate array.
+
+let arr1 = [2, 4, 0, 100, 4, 11, 2602, 36] 
+let arr2 = [160, 3, 1719, 19, 11, 13, -21]
+
+function outlier (array) {
+    let even = []
+    let odd = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            even.push(array[i])
+        } else {
+            odd.push(array[i])
+        }
+    }
+    if (even.length < odd.length) {
+        return even
+    } else {
+        return odd
+    }
+}
+
+console.log(outlier(arr1))
+// Should return: 11 
+console.log('--------------------------------')
+console.log(outlier(arr2))
+// Should return: 160 
