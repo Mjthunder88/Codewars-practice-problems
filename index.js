@@ -134,10 +134,10 @@ function outlier (array) {
     }
 }
 
-console.log(outlier(arr1))
+// console.log(outlier(arr1))
 // Should return: 11 
 console.log('--------------------------------')
-console.log(outlier(arr2))
+// console.log(outlier(arr2))
 // Should return: 160 
 
 // problem 7
@@ -177,3 +177,25 @@ function check(a, x) {
 // console.log(check([101, 45, 75, 105, 99, 107], 107))
 // console.log(check(['t', 'e', 's', 't'], 'e'))
 // console.log(check(['what', 'a', 'great', 'kata'], 'kat'))
+
+
+//Problem 9 Code challange Wk5 Day 2
+
+// Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+
+// Take a string of Numbers and insert the necessary symbols to make a phone number 
+// loop through the number and make the changes
+
+function createPhoneNumber (phone) {
+  phone.splice(0, 0, '(')
+  phone.splice(4, 0, ')')
+  phone.splice(5, 0, ' ')
+  phone.splice(9, 0, '-')
+  let newPhone = phone.join('')
+  // console.log(newPhone)
+  return newPhone
+}
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) // => returns "(123) 456-7890"
+console.log(createPhoneNumber([8, 0, 1, 8, 3, 7, 6, 9, 6, 6])) // => returns "(801) 837-6966"
+console.log(createPhoneNumber([8, 0, 1, 8, 5, 4, 2, 1, 6, 6])) // => returns "(801) 854-2166"
