@@ -214,9 +214,9 @@ function  populationFinder (popnum, percentGrowth, movers, popGoal ) {
   let newPercentGrowth = percentGrowth / 100
   // console.log(newPercentGrowth)
     while (popnum <= popGoal) {
-      popnum = popnum + (popnum * newPercentGrowth) + movers
-      console.log(popnum)
-      console.log('-------------------')
+      popnum += (popnum * newPercentGrowth) + movers
+      // console.log(popnum)
+      // console.log('-------------------')
       yearCount++
     }
     return  `Year Growth: ${yearCount}`
