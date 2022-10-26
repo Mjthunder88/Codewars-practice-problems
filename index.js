@@ -8,7 +8,7 @@ function findNeedle(haystack) {
   } 
   }
   
-  console.log(findNeedle(['hello', '1', 'hi', 'needle', 'cool', '4']))
+  // console.log(findNeedle(['hello', '1', 'hi', 'needle', 'cool', '4']))
 
   // I am looping through an array and at each index verifying if it contains the string "needle"
   // Once that string is found it then returns the set phrase. 
@@ -196,6 +196,35 @@ function createPhoneNumber (phone) {
   return newPhone
 }
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) // => returns "(123) 456-7890"
-console.log(createPhoneNumber([8, 0, 1, 8, 3, 7, 6, 9, 6, 6])) // => returns "(801) 837-6966"
-console.log(createPhoneNumber([8, 0, 1, 8, 5, 4, 2, 1, 6, 6])) // => returns "(801) 854-2166"
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) // => returns "(123) 456-7890"
+// console.log(createPhoneNumber([8, 0, 1, 8, 3, 7, 6, 9, 6, 6])) // => returns "(801) 837-6966"
+// console.log(createPhoneNumber([8, 0, 1, 8, 5, 4, 2, 1, 6, 6])) // => returns "(801) 854-2166"
+
+
+//problem 10 Code challange wk5 day 3
+// in a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+
+
+
+
+let p0 = 1000
+
+function  populationFinder (popnum, percentGrowth, movers, popGoal ) {
+  let yearCount = 0
+  let newPercentGrowth = percentGrowth / 100
+  // console.log(newPercentGrowth)
+    while (popnum <= popGoal) {
+      popnum = popnum + (popnum * newPercentGrowth) + movers
+      console.log(popnum)
+      console.log('-------------------')
+      yearCount++
+    }
+    return  `Year Growth: ${yearCount}`
+}
+
+
+console.log(populationFinder(p0, 2, 50, 1200))
+console.log(populationFinder(500, 8, 100, 5000))
+console.log(populationFinder(2000, 5, 200, 5000))
+console.log(populationFinder(1500, 5, 100, 5000))//15
+console.log(populationFinder(1500000, 2.5, 10000, 2000000)) //10
