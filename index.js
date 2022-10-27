@@ -223,8 +223,49 @@ function  populationFinder (popnum, percentGrowth, movers, popGoal ) {
 }
 
 
-console.log(populationFinder(p0, 2, 50, 1200))
-console.log(populationFinder(500, 8, 100, 5000))
-console.log(populationFinder(2000, 5, 200, 5000))
-console.log(populationFinder(1500, 5, 100, 5000))//15
-console.log(populationFinder(1500000, 2.5, 10000, 2000000)) //10
+// console.log(populationFinder(p0, 2, 50, 1200))
+// console.log(populationFinder(500, 8, 100, 5000))
+// console.log(populationFinder(2000, 5, 200, 5000))
+// console.log(populationFinder(1500, 5, 100, 5000))//15
+// console.log(populationFinder(1500000, 2.5, 10000, 2000000)) //10
+
+
+// Problem 11
+
+// Your task is to return the names of all wishlisted presents that you might have gotten.
+// Possible values for size: “small”, “medium”, “large”
+// Possible values for clatters: “no”, “a bit”, “yes”
+// Possible values for weight: “light”, “medium”, “heavy”
+// Don’t add any item more than once to the result
+// The order of names in the output doesn’t matter
+// It’s possible, that multiple items from your wish list have the same attribute values. If they match the attributes of one of the presents, add all of them.
+
+var wishlist = [
+  {name: "Mini Puzzle", size: "small", clatters: "yes", weight: "light"},
+  {name: "Toy Car", size: "medium", clatters: "a bit", weight: "medium"},
+  {name: "Card Game", size: "small", clatters: "no", weight: "light"}
+];
+
+var presents = [
+  {size: "medium", clatters: "a bit", weight: "medium"},
+  {size: "small", clatters: "yes", weight: "light"}
+];
+
+function guessGifts (wishlist, presents) {
+
+  let guesses = []
+  
+  for (let i = 0; i < wishlist.length; i++) {
+    for (let k = 0; k < presents.length; k++) {
+      if (wishlist[i].size === presents[k].size && wishlist[i].weight === presents[k].weight && wishlist[i].clatters === presents[k].clatters) {
+        guesses.push(wishlist[i].name)
+      }
+    }
+     
+    }
+    return guesses
+
+};
+
+
+// console.log(guessGifts(wishlist, presents)); // must return ["Toy Car", "Mini Puzzle"]
