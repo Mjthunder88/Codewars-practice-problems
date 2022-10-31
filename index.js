@@ -136,7 +136,7 @@ function outlier (array) {
 
 // console.log(outlier(arr1))
 // Should return: 11 
-console.log('--------------------------------')
+// console.log('--------------------------------')
 // console.log(outlier(arr2))
 // Should return: 160 
 
@@ -310,3 +310,49 @@ function printerError(s) {
 
 // s="aaaxbbbbyyhwawiwjjjwwm"
 // printer_error(s) => "8/22"
+
+
+// Problem 13
+
+// Write a function that takes in a number. It should return a “tower” of *. The tower will be an array of strings.
+
+// The number passed in tells you how many floors the tower should have.
+
+// The first floor should have 1 block, the 2nd should have 3 blocks, the 3rd should have 5 blocks, and so on.
+
+// Each block is represented by a *.
+
+// function towerBuild (num) {
+//   let tower = []
+//     while (num > 0)  {
+//       tower.push(' ')
+//       tower.push('*')
+//       tower.unshift(' ')
+//       num--
+//     }
+//     console.log(tower)
+// }
+
+// towerBuild(3)
+
+function towerBuilder(nFloors) {
+  var tower = [];
+  for (var i = 0; i < nFloors; i++) {
+  tower.push(" ".repeat(nFloors - i - 1)+ "*".repeat((i * 2)+ 1)+ " ".repeat(nFloors - i - 1))
+  // the .repeat() method will run the number of times specified in the (). So to create the floor it takes the number of floors 
+  // subtracts it by i in the floor loop so that for every floor it will decrease the number of times its repeated. 
+  // then with the * its doubled everytime i goes up so that it will create a tree affect. 
+  //And for every repeat it then will push that floor into the tower array then it will go again. 
+  }
+  for (let i = 0; i < tower.length; i++) {
+    console.log(tower[i])
+  }
+  return tower;
+  }
+
+  towerBuilder(3);
+  console.log('--------------')
+  towerBuilder(6)
+  console.log('--------------')
+  towerBuilder(10)
+  console.log('--------------')
