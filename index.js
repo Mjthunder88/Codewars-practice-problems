@@ -350,9 +350,88 @@ function towerBuilder(nFloors) {
   return tower;
   }
 
-  towerBuilder(3);
-  console.log('--------------')
-  towerBuilder(6)
-  console.log('--------------')
-  towerBuilder(10)
-  console.log('--------------')
+  // towerBuilder(3);
+  // console.log('--------------')
+  // towerBuilder(6)
+  // console.log('--------------')
+  // towerBuilder(10)
+  // console.log('--------------')
+
+
+  // Problem 14
+
+
+//   You might know some pretty large perfect squares. But what about the NEXT one?
+
+// Write a function in perfectSquare.js that finds the next perfect square after the one passed in as an argument and returns it.
+
+// Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer (look at the examples if this sounds confusing).
+
+// If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+
+
+  function perfectSquare (num1) {
+     let num2 = Math.sqrt(num1)
+     if (Number.isInteger(num2))  {
+      //  console.log(num2)
+    let newNum = num2 + 1
+    // console.log(newNum)
+       let result = newNum * newNum
+       return result
+     } else {
+      return -1
+     }
+  }
+
+//   console.log(perfectSquare(9)) // should return 16 (3x3=9, 4x4=16)
+
+// console.log(perfectSquare(289)) // should return 324 (17x17=289 18x18=324)
+
+// console.log(perfectSquare(3000)) // should return -1 (sq root of 3000 is 54.77)
+
+// Challange 2
+
+// Make a new function similar to the last one, the only difference being, your function can accept any number,
+// and it must return the next highest square (negative numbers will return 0, as it is the next perfect square).
+
+
+function nextSquare (num1) {
+  if (num1 < 0) {
+    return 0
+  }
+  num1 = Math.floor(num1)
+  let num2 = Math.sqrt(num1)
+  if (Number.isInteger(num2))  {
+   //  console.log(num2)
+ let newNum = num2 + 1
+ // console.log(newNum)
+    let result = newNum * newNum
+    return result
+  } else {
+    return -1
+
+  }
+}
+
+
+
+// For example:
+// --------------------------------------------------------------
+console.log(nextSquare(9.82)) // should return 16
+console.log(nextSquare(289)) // should return 324
+console.log(nextSquare(-36.5)) // should return 0 
+
+// Challenge 3:
+
+// Make a new function similar to the last one, the only different being, your function will return the next
+// number that is both perfectly square and triangular (Google "what is a triangular number" if you don't know)
+// 0 is considered both a perfect square and a perfect triangle
+
+
+
+
+// For example:
+// --------------------------------------------------------------
+console.log(nextSquareTri(-9.82)) // should return 0
+console.log(nextSquareTri(0.56)) // should return 1
+console.log(nextSquareTri(18)) // should return 36
