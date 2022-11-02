@@ -271,48 +271,13 @@ function guessGifts (wishlist, presents) {
 // console.log(guessGifts(wishlist, presents)); // must return ["Toy Car", "Mini Puzzle"]
 
 
-//Problem 12
-
-// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
-
-// You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
-
-// The string has a length greater or equal to one and contains only letters from ato z.
-
-
-//DID NOT FINISH TRY AGAIN 
-
-function printerError(s) {
-  let compare = ['a','b','c','d','e','f','g','h','i','j','k','l','m']
-  let errors = 0
-  let length = s.length
-    for (let i = 0; i < s.length; i++) {
-        for (let k = 0; k < s.length; k++) {
-            if (s[i] === compare[k]) {
-              continue
-            } else {
-              errors++
-            }
-        }
-       let errors2 = String(errors)
-       let length2 = String(length)
-       let result = errors2 + '/' + length
-       console.log(result)
-      
-      return result
-}
-
-}
-
-
 // s="aaabbbbhaijjjm"
 // printer_error(s) => "0/14"
 
 // s="aaaxbbbbyyhwawiwjjjwwm"
 // printer_error(s) => "8/22"
 
-
-// Problem 13
+// 12
 
 // Write a function that takes in a number. It should return a “tower” of *. The tower will be an array of strings.
 
@@ -417,9 +382,9 @@ function nextSquare (num1) {
 
 // For example:
 // --------------------------------------------------------------
-console.log(nextSquare(9.82)) // should return 16
-console.log(nextSquare(289)) // should return 324
-console.log(nextSquare(-36.5)) // should return 0 
+// console.log(nextSquare(9.82)) // should return 16
+// console.log(nextSquare(289)) // should return 324
+// console.log(nextSquare(-36.5)) // should return 0 
 
 // Challenge 3:
 
@@ -432,6 +397,38 @@ console.log(nextSquare(-36.5)) // should return 0
 
 // For example:
 // --------------------------------------------------------------
-console.log(nextSquareTri(-9.82)) // should return 0
-console.log(nextSquareTri(0.56)) // should return 1
-console.log(nextSquareTri(18)) // should return 36
+// console.log(nextSquareTri(-9.82)) // should return 0
+// console.log(nextSquareTri(0.56)) // should return 1
+// console.log(nextSquareTri(18)) // should return 36
+
+
+// Problem 15
+
+// Write a function in romanNumerals.js that converts an integer (<= 1,000) to its Roman numeral equivalent.
+// we need to check the number passed in  to see what numerals it recives to make the number
+// so if its less than 100 then it recives the necessary roman numerals
+// if its greater than or equal to 100 then it will reacive the necessary 
+// Important: You should convert to “old-school Roman numerals”, where subtraction isn’t used. So, for exmple, 4 is “IIII” and 9 is “VIIII”. You may be more used to a different style, where subtraction is used, as 4 would be “IV” and 9 would be “IX”. This is not what we want here (though it’s a good, but much harder challenge).
+
+function toRoman(num) {
+  let lookup = {M:1000,D:500,C:100,L:50,X:10,V:5,I:1},roman = '';
+  for ( i in lookup ) {
+    while ( num >= lookup[i] ) {
+      roman += i;
+      num -= lookup[i];
+    }
+  }
+  return roman;
+}
+
+
+
+console.log(toRoman(5))
+// 'V'
+console.log(toRoman(3))
+
+console.log(toRoman(267))
+// 'CCLXVII'
+
+console.log(toRoman(99))
+// 'LXXXXVIIII'
