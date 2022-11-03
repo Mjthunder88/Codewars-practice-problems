@@ -423,12 +423,99 @@ function toRoman(num) {
 
 
 
-console.log(toRoman(5))
+// console.log(toRoman(5))
 // 'V'
-console.log(toRoman(3))
+// console.log(toRoman(3))
 
-console.log(toRoman(267))
+// console.log(toRoman(267))
 // 'CCLXVII'
 
-console.log(toRoman(99))
+// console.log(toRoman(99))
 // 'LXXXXVIIII'
+
+
+// Bens solution
+// This works just like the code above but it just breaks it down into a more bite sized info. 
+// All its doing is comparing then if its equal it shoves it into the answer and subtracts it from the value it was equal too.
+// Love this solution because its easier to understand. 
+// function toRoman(num){
+//   let answer = ''
+
+//   while(num > 0){
+//     if(num === 1000){
+//       answer += "M"
+//       num -= 1000
+//     }else if(num >= 500){
+//       answer += "D"
+//       num -= 500
+//     }else if(num >= 100){
+//       answer += "C"
+//       num -= 100
+//     }else if(num >= 50){
+//       answer += "L"
+//       num -= 50
+//     }else if(num >= 10){
+//       answer += "X"
+//       num -= 10
+//     }else if(num >= 5){
+//       answer += "V"
+//       num -= 5
+//     }else if(num >= 1){
+//       answer += "I"
+//       num -= 1
+//     }
+//   }
+
+//   return answer
+// }
+
+// console.log(toRoman(267))
+
+
+
+// Problem 16
+
+let array1 = [23, 2, 3, 4, 5]
+
+function sort (array) {
+  let answer= []
+  let sum = []
+  sum.push( array[0] * 1)
+  answer.push(array[0])
+    for (let i = 1; i < array.length; i++) {
+      sum.push(array[i] * array[i])
+      // console.log(sum)
+
+      if (sum[i] < sum[i - 1]) {
+        answer.unshift(array[i])
+      } else {
+        answer.push(array[i])
+      }
+    }
+    return answer
+}
+
+// console.log(sort([23, 2, 3, 4, 5]))
+// Jareds soloution
+
+function sortArr (arr) {
+  arr = arr.map((num, index) => {
+    return num, index + 1
+  })
+
+  arr = arr.map((numArr) => {
+    return [numArr[0], numArr[0] * numArr[1]]
+  })
+
+  arr.sort((a, b) => {
+    return a[1] - b[1]
+  })
+
+arr = arr.map(() => {
+  return arr[0]
+})
+
+return arr
+}
+
+console.log(sortArr[23, 2, 3, 4, 5])
