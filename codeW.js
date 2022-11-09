@@ -41,3 +41,5 @@ function diff (arr1, arr2) {
 }
 
 console.log(diff([10, 20, 14, 16, 18], [30, 23, 54, 33, 96]))
+
+// Runtime is O(n)
