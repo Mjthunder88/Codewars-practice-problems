@@ -52,3 +52,51 @@ function removeExclamationMarks(s) {
     console.log(answer)
     return answer ;
   }
+
+
+//   Problem 4 code challange 
+// If number is 7n 
+// Player one can choose 2,3 or up to 5 stones
+// If player one chooses 5 stones he loses 
+// If player one chooses 3 stones he can lose 
+// If player one chooses 2 
+
+// Jareds solution
+
+
+let canWin = (n) => {
+    console.log('---------------')
+    console.log('starting a new functiton call with ' + n)
+    if (n < 2) {
+        // console.log(n + ' is less than 2, so return false')
+        return false 
+    }
+
+    let legalMoves = [2, 3, 5]
+
+    for (let i = 0; i < legalMoves.length; i++) {
+        let move = legalMoves[i]
+
+        // console.log(' from ' + n + ', subtract ' + move + ' and call a new function call with the number: ' + (n - move))
+
+         let oppistieDidntWin = !canWin(n - move)
+        //  console.log('back here at a previous function where we were subtracting ' + move + ' from ' + n)
+
+         if (oppistieDidntWin) {
+            return true
+
+         } else if (move === 5) {
+            // console.log('it appears that the opponent won, so this player cannont win here, return false: bummer')
+         } else {
+            // console.log('it appears that the opponent won, but we still have choice(s to try, so lets try again with another move')
+         }
+    }
+
+    return false 
+}
+
+// for (let i = 0; i < 50; i++) {
+//     console.log('for ' + i + ': ' + canWin(i))
+// }
+
+console.log(canWin(7))
