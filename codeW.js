@@ -40,6 +40,15 @@ function diff (arr1, arr2) {
      return answer
 }
 
-console.log(diff([10, 20, 14, 16, 18], [30, 23, 54, 33, 96]))
+// console.log(diff([10, 20, 14, 16, 18], [30, 23, 54, 33, 96]))
 
 // Runtime is O(n)
+
+// problem 3
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+    let answer = s.replace(/[!]/gi, '')
+    console.log(answer)
+    return answer ;
+  }
