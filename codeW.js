@@ -99,4 +99,47 @@ let canWin = (n) => {
 //     console.log('for ' + i + ': ' + canWin(i))
 // }
 
-console.log(canWin(7))
+// console.log(canWin(7))
+
+
+
+// Problem 5 
+
+// Code as fast as you can! You need to double the integer and return it.
+
+function doubleInteger(i) {
+    return i * 2;
+  }
+
+//   Problem 6
+
+// Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+
+var number=function(array){
+    let count = 1
+    let newString = []
+   array.forEach(element => {
+   newString.push(`${count}: ${element}`)
+     count++
+   })
+   return newString
+ }
+
+//  Problem 7
+
+function isPalindrome(x) {
+    if (x === '') {
+      return true
+    }
+    let lowerCase = x.toLowerCase()
+      for (let i = 0; i < x.length; i++) {
+        if (lowerCase[0] === lowerCase[lowerCase.length - 1] && lowerCase[1] === lowerCase[lowerCase.length -2] ) {
+          return true 
+        } 
+      }
+    return false
+  }
