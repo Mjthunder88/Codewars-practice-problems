@@ -217,3 +217,47 @@ function isPalindrome(x) {
       return false 
     }
 }
+
+
+// problem 11
+
+// Write a function to split a string and convert it into an array of words.
+
+function stringToArray(string){
+  return string.split(' ')
+
+}
+
+// Problem 12
+
+// When provided with a number between 0-9, return it in words.
+
+// Input :: 1
+
+// Output :: "One".
+
+function switchItUp(number){
+  if (number === 0) {
+   return "Zero"
+ }
+   else if (number === 1) {
+   return "One"
+ } else if (number === 2) {
+   return "Two"
+ } else if (number === 3) {
+   return "Three"
+ } else if (number === 4) {
+   return "Four"
+ } else if (number === 5) {
+   return "Five"
+ } else if (number === 6) {
+   return "Six"
+ } else if (number === 7) {
+   return "Seven"
+ } else if (number === 8) {
+   return "Eight"
+ } else if (number === 9) {
+   return "Nine"
+ }
+
+}
