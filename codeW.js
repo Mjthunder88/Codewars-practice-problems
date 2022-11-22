@@ -251,7 +251,7 @@ function switchItUp(number) {
   }
 }
 
-// problem 3
+// problem 3 challange level 6
 
 // Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
 // []                                -->  "no one likes this"
@@ -279,8 +279,25 @@ function likes(names) {
     }
   }
 }
-console.log(likes([]))
-console.log(likes(['Peter']))
-console.log(likes(['Peter', 'Jacob']))
-console.log(likes(['Peter', 'Jacob', 'Jack']))
-console.log(likes(['Peter', 'Jacob', 'Jack', 'Sam']))
+// console.log(likes([]))
+// console.log(likes(['Peter']))
+// console.log(likes(['Peter', 'Jacob']))
+// console.log(likes(['Peter', 'Jacob', 'Jack']))
+// console.log(likes(['Peter', 'Jacob', 'Jack', 'Sam']))
+
+
+// Problem 4
+
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+function countSheeps(arrayOfSheep) {
+  let count = 0
+  for (let i = 0; i < arrayOfSheep.length; i++){
+    if(arrayOfSheep[i] === true) {
+      count++
+    } else if (arrayOfSheep === false) {
+      continue 
+    }
+  }
+  return count 
+}
