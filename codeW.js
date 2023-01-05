@@ -267,7 +267,7 @@ function likes(names) {
   // console.log(names)
   for (let i = 0; i < names.length + 1; i++) {
     if (names.length < 1) {
-      return "no one likes this"
+      return "no one likes this";
     } else if (namesLength === 1) {
       return `${names[i]} likes this`;
     } else if (namesLength > 1 && namesLength < 3) {
@@ -275,7 +275,9 @@ function likes(names) {
     } else if (namesLength > 2 && namesLength < 4) {
       return `${names[i]}, ${names[i + 1]} and ${names[i + 2]} like this`;
     } else if (namesLength > 3) {
-      return `${names[i]}, ${names[i + 1]} and ${namesLength - 2} others like this`;
+      return `${names[i]}, ${names[i + 1]} and ${
+        namesLength - 2
+      } others like this`;
     }
   }
 }
@@ -285,19 +287,48 @@ function likes(names) {
 // console.log(likes(['Peter', 'Jacob', 'Jack']))
 // console.log(likes(['Peter', 'Jacob', 'Jack', 'Sam']))
 
-
 // Problem 4
 
 // Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
 
 function countSheeps(arrayOfSheep) {
-  let count = 0
-  for (let i = 0; i < arrayOfSheep.length; i++){
-    if(arrayOfSheep[i] === true) {
-      count++
+  let count = 0;
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] === true) {
+      count++;
     } else if (arrayOfSheep === false) {
-      continue 
+      continue;
     }
   }
-  return count 
+  return count;
 }
+
+//? Problem 5
+
+// ? The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+// ? To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+function openOrSenior(data) {
+  console.log(data);
+  console.log("----------------------");
+  let answer = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][0] >= 55 && data[i][1] > 7) {
+      answer.push("Senior");
+    } else {
+      answer.push("Open");
+    }
+  }
+  return answer;
+}
+
+console.log(
+  openOrSenior([
+    [45, 12],
+    [55, 21],
+    [19, -2],
+    [104, 20],
+  ])
+); // *['Open', 'Senior', 'Open', 'Senior']
+
+//* Finished! 
